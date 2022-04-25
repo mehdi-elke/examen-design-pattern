@@ -4,6 +4,7 @@ const User = require('../models/users/user.js');
 const Comic = require('../models/books/comic.js');
 const Journal = require('../models/books/journal.js');
 const Novel = require('../models/books/novel.js');
+const Book = require("../models/books/book");
 
 class BookService {
 
@@ -29,8 +30,8 @@ class BookService {
     }
 
 
-    add(book){
-        this.books.push(book);
+    add(newBook){
+        this.books.push(newBook);
     }
 
     remove(book){

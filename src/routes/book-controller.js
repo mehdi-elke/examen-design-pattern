@@ -3,6 +3,7 @@ var router = express.Router();
 
 const utils = require('../utils/book-schema.js');
 const bookService = require('./book-service.js');
+const bookFactory = require('../factories/book-factory.js')
 const Book = require('../models/books/book.js');
 
 router.get("/books" , (request, response) => {
@@ -22,7 +23,11 @@ router.post("/books", (request, response) => {
     if(error) return response.status(400).send("Necessary information is not provided")
 
     try {
-        const newBook = new Book(1,request.body.name);
+        //const newBook = new Book(1,request.body.name);
+        const author = request.body.author ?? null;
+        const number = request.body.number ?? null;
+        const date = request.body.date ?? null;
+        const newBook = bookFactory.create(request.body.name, author, number, date);
         bookService.add(newBook);
         response.status(201).send(newBook);
     } catch (e) {
