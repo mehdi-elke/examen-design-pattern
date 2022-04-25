@@ -31,7 +31,7 @@ It's necessary to chain all calls, because we will integrate multi thirds partie
 - [x] Create authentication interceptor
 - [ ] Throws error if user and x-api-key not valid
 - [ ] Check user, only admin, admin1 and admin 2 are authorized
-- [ ] Check authorization header, the value is encoded into base64, only user and password are authorized
+- [ ] Check authorization header, the value is encoded into base64, only user and password are authorized user:password
 - [ ] Check x-api-key,  only x-api-key 123 is authorized
 - [ ] Chain checks
 - [x] Test

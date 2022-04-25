@@ -18,6 +18,7 @@ class UserService {
     findAll(){
         // In order to simulate external service call
         sleep(700);
+        console.log(this.users.length)
         return this.users;
     }
 

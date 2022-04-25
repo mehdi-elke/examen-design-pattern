@@ -21,5 +21,6 @@ For this we will implement a proxy-cache
 - [ ] Replace usage of user-service by the proxy
 - [x] Test
 
+// Il faut créer un proxy 
 
 The test "It should return all users for each call" into users-test.js should be green after the implementation of the function.

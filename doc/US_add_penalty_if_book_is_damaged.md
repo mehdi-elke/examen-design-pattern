@@ -20,6 +20,7 @@ For this we will implement a proxy-cache
 - [ ] Add penalty( +1) for the user
 - [ ] test
 
+// Il faut ajouter un observer pour que quand un livre est endommagé, qu'il notifie le user-service et ajoute la pénalité.
 
 The test "PATCH /api/books/:id" should be green after the PATCH step.
 You need to write some tests.
