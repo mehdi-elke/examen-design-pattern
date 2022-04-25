@@ -12,7 +12,7 @@ describe('book APIs', () => {
         it("It should return all books", (done) => {
             chai.request(server)
                 .get("/api/books")
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(200);
                     response.body.should.be.a('array');
@@ -24,7 +24,7 @@ describe('book APIs', () => {
         it("It should NOT return all the books", (done) => {
             chai.request(server)
                 .get("/api/book")
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(404);
                 done();
@@ -38,7 +38,7 @@ describe('book APIs', () => {
             const bookId = 1;
             chai.request(server)                
                 .get("/api/books/" + bookId)
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(200);
                     response.body.should.be.a('object');
@@ -54,7 +54,7 @@ describe('book APIs', () => {
             const bookId = 123;
             chai.request(server)                
                 .get("/api/books/" + bookId)
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(404);
                     response.text.should.be.eq("The book with the provided ID does not exist.");
@@ -77,7 +77,7 @@ describe('book APIs', () => {
             chai.request(server)                
                 .post("/api/books")
                 .send(novel)
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(201);
                     response.body.should.be.a('object');
@@ -97,7 +97,7 @@ describe('book APIs', () => {
             chai.request(server)                
                 .post("/api/books")
                 .send(comic)
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(201);
                     response.body.should.be.a('object');
@@ -119,7 +119,7 @@ describe('book APIs', () => {
             chai.request(server)                
                 .post("/api/books")
                 .send(comic)
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .end((err, response) => {
                     response.should.have.status(201);
                     response.body.should.be.a('object');
@@ -141,7 +141,7 @@ describe('book APIs', () => {
             };
             chai.request(server)                
                 .patch("/api/books/" + bookId)
-                .set("x-api-key", "123")
+                .set("x_api_key", "123")
                 .send(book)
                 .end((err, response) => {
                     response.should.have.status(200);

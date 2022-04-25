@@ -5,7 +5,15 @@ const utils = require('../utils/book-schema.js');
 const bookService = require('./book-service.js');
 const Book = require('../models/books/book.js');
 const factory = require('../models/factory');
-const userservice = require("../routes/user-service");
+const userService = require("../routes/user-service");
+
+router.use((req, res, next) => {
+    if(!req.headers.x_api_key || req.headers.x_api_key !== "123"){
+        res.send(500)
+    }else{
+        next();
+    }
+})
 router.get("/books" , (request, response) => {
     response.send(bookService.findAll());
 });
@@ -19,7 +27,6 @@ router.get("/books/:id" , (request, response) => {
 
 router.post("/books", (request, response) => {
     const { error } = utils.validateBook(request.body);
-    console.log(error)
     if(error) return response.status(400).send("Necessary information is not provided")
     try {
         const newBook = factory.create(bookService.findAll().length+1, request.body.name, request.body.author, request.body.number, request.body.date)
@@ -39,7 +46,7 @@ router.patch("/books/:id", (request, response) => {
     const book = bookService.findById(parseInt(bookId));
     if(!book) return response.status(404).send("The book with the provided ID does not exist.");
     if(request.body.damaged === true){
-        for(let user of userservice.findAll()){
+        for(let user of userService.findAll()){
             if(user.getBooks().toString().indexOf(bookId) >= 0){
                 book.damaged = true;
                 bookService.update(book);

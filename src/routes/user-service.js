@@ -1,8 +1,8 @@
 
-const GoogleUser = require("../models/users/google-user.js");
-const User = require('../models/users/user.js');
+const Userproxy = require("./user-proxy.js")
+const User = require("../models/users/user");
 const UserAdapter = require("../adapter/adapter");
-
+const GoogleUser = require("../models/users/google-user");
 class UserService {
 
     constructor(){
@@ -17,21 +17,20 @@ class UserService {
 
     findAll(){
         // In order to simulate external service call
-        //sleep(700);
+        sleep(700);
         return this.users;
     }
 
     findById(id){
-        return this.users.find(user => user.getId() == id);
+        Userproxy.findById(id)
     }
 
     add(user){
-        this.users.push(user);
+        Userproxy.add(user);
     }
 
     remove(user){
-        const index = this.users.indexOf(user);
-        this.users.splice(index, 1);
+        Userproxy.remove(user);
     }
     
 }
