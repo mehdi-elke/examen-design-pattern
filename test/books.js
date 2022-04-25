@@ -112,7 +112,7 @@ describe('book APIs', () => {
         });
 
         it("It should POST a new journal", (done) => {
-            const comic = {
+            const magazine = {
                 name: "Kaizen Magazine",
                 number: 1,
                 date: new Date('2022-03-01')
@@ -120,7 +120,7 @@ describe('book APIs', () => {
             };
             chai.request(server)                
                 .post("/api/books")
-                .send(comic)
+                .send(magazine)
                 .set("x-api-key", "123")
                 .end((err, response) => {
                     response.should.have.status(201);

@@ -16,7 +16,7 @@ describe('Integration testing', () => {
             };
 
             chai.request(server)
-                 .get("/api/users/1")
+                 .get("/api/users/3")
                  .set("x-api-key", "123")
                  .end((err, response) => {
                 response.body.should.have.property('penalty').eq(0);
@@ -31,7 +31,7 @@ describe('Integration testing', () => {
                 });
 
             chai.request(server)
-                .get("/api/users/1")
+                .get("/api/users/3")
                 .set("x-api-key", "123")
                 .end((err, response) => {
                     response.body.should.have.property('penalty').eq(1);
