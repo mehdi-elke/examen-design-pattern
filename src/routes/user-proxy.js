@@ -8,6 +8,12 @@ class UserServiceProxy {
 
     constructor(){
         this.users = [];
+        this.users.push(new User(1,"name1",[2,3]));
+        this.users.push(new User(2,"name2",[]));
+        this.users.push(new User(3,"name3",[1]));
+        this.users.push(new UserAdapter(new GoogleUser("firstname1","lastname1")));
+        this.users.push(new UserAdapter(new GoogleUser("firstname2","lastname2")));
+        this.users.push(new UserAdapter(new GoogleUser("firstname3","lastname3")));
     }
 
     findAll(){
