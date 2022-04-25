@@ -18,6 +18,10 @@ class User {
     getBooks(){
         return this.books;
     }
+
+    setPenalityPoint(){
+        this.penalty++;
+    }
 }
 
 module.exports = User;

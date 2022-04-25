@@ -1,6 +1,5 @@
-const GoogleUser = require("../models/users/google-user.js");
-const User = require('../models/users/user.js');
 
+const User = require('../routes/user-service.js');
 const Comic = require('../models/books/comic.js');
 const Journal = require('../models/books/journal.js');
 const Novel = require('../models/books/novel.js');

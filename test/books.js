@@ -73,7 +73,6 @@ describe('book APIs', () => {
             const novel = {
                 name: "Bazaar",
                 author: "Stephen King"
-
             };
             chai.request(server)                
                 .post("/api/books")
@@ -94,7 +93,6 @@ describe('book APIs', () => {
                 name: "Amazing Spider-Man",
                 author: "Stan Lee",
                 number: 4
-
             };
             chai.request(server)                
                 .post("/api/books")

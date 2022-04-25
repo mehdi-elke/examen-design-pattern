@@ -18,5 +18,5 @@ app.use('/api', bookRouter);
 app.use('/api', userRouter);
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 module.exports = app.listen(port, () => console.log(`Listening on port ${port}...`));

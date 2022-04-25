@@ -5,7 +5,6 @@ class Book {
         this.name = name;
         this.damaged = damaged;
     }
-
 }
 
 module.exports = Book;

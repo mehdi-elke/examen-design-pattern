@@ -1,7 +1,12 @@
 const Joi = require('joi');
 
 const bookSchema = {
-    name: Joi.string().min(1).required()
-};
+    name: Joi.string().min(1).required(),
+    author:Joi.string(),
+    number:Joi.number(),
+    date:Joi.date(),
 
-exports.validatebook = (book) => Joi.validate(book, bookSchema);
+};
+console.log(bookSchema.name)
+
+exports.validateBook = (book) => Joi.validate(book, bookSchema);
