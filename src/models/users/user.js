@@ -5,6 +5,7 @@ class User {
         this.name = name;
         this.books = books;
         this.penalty = 0;
+        times(700)
     }
 
     getId(){
@@ -19,5 +20,14 @@ class User {
         return this.books;
     }
 }
+
+function times(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+
 
 module.exports = User;
