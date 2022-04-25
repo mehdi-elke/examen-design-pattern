@@ -18,9 +18,9 @@ router.get("/books/:id" , (request, response) => {
 });
 
 router.post("/books", (request, response) => {
-    const { error } = utils.validateBook(request.body);
+    //const { error } = utils.validateBook(request.body);
 
-    if(error) return response.status(400).send("Necessary information is not provided")
+    //if(error) return response.status(400).send("Necessary information is not provided")
 
     try {
         //const newBook = new Book(1,request.body.name);
