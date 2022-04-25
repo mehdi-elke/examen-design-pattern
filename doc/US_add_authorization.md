@@ -38,3 +38,5 @@ It's necessary to chain all calls, because we will integrate multi thirds partie
 
 
 The test suite "Test security connection" into integration-test.js should be green after the implementation of the function.
+
+// J'ai commencé à avancer dessus mais pas à le finir, j'ai fais la chaine de responsabilité qui vérifie d'abord l'api key puis l'authorization en base 64, il manque plus qu'à les rassembler puis faire passer les requêtes dans cette chaine pour valider les headers.
