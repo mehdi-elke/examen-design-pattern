@@ -41,8 +41,7 @@ class BookService {
 
     update(book){
         const index = this.books.findIndex(oldBook => oldBook.id == book.id);
-        this.books.splice(index, 1);
-        this.books.push(book);
+        this.books[index] = book;
     }
 }
    

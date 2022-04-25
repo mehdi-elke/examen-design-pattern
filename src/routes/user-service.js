@@ -1,6 +1,7 @@
 
 const GoogleUser = require("../models/users/google-user.js");
 const User = require('../models/users/user.js');
+const GoogleUserAdapter = require('../adapter/google-user-adapter.js');
 
 class UserService {
 
@@ -9,9 +10,9 @@ class UserService {
         this.users.push(new User(1,"name1",[2,3]));
         this.users.push(new User(2,"name2",[]));
         this.users.push(new User(3,"name3",[1]));
-        this.users.push(new GoogleUser("firstname1","lastname1"));
-        this.users.push(new GoogleUser("firstname2","lastname2"));
-        this.users.push(new GoogleUser("firstname3","lastname3"));
+        this.users.push(new GoogleUserAdapter(new GoogleUser('firstname1', 'lastname1'), 4));
+        this.users.push(new GoogleUserAdapter(new GoogleUser('firstname2', 'lastname2'), 5));
+        this.users.push(new GoogleUserAdapter(new GoogleUser('firstname3', 'lastname3'), 6));
     }
 
     findAll(){

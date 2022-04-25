@@ -39,11 +39,9 @@ router.post("/books", (request, response) => {
 
 
 router.patch("/books/:id", (request, response) => {
-   
     const bookId = request.params.id;
     const book = bookService.findById(parseInt(bookId));
     if(!book) return response.status(404).send("The book with the provided ID does not exist.");
-
 
     bookService.update(book);
  
